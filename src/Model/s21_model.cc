@@ -21,7 +21,7 @@ namespace s21 {
                     result = false;
                 }
             } else if (*i == '+' || *i == '-') {
-                if (s21::isSign(*(i + 1))) {
+                if (isSign(*(i + 1))) {
                     result = false;
                 } else if (*(i + 1) == ')') {
                     result = false;
@@ -390,7 +390,7 @@ namespace s21 {
 
     void result::start(std::string expression, double x) {
         std::list<s21::model> list = {};
-        if (s21::validation(expression)) {
+        if (validation(expression)) {
             parsing(expression, list, x);
             std::list<s21::model> new_list = polishNotation(list);
             this->setResult(calc_process(new_list));

@@ -37,6 +37,21 @@ enum Oper {
 };
 
 namespace s21 {
+    class model {
+    public:
+        model();
+        model(double data, int oper, int priority);
+        ~model() { ; }
+        double getData() const;
+        int getOper() const;
+        int getPriority() const;
+
+    private:
+        double data_;
+        int oper_;
+        int priority_;
+    };
+
     class result {
     public:
         result() {
@@ -83,20 +98,7 @@ namespace s21 {
         static void lnOp(std::list<double> &list);
         static void logOp(std::list<double> &list);
     };
-    class model {
-    public:
-        model();
-        model(double data, int oper, int priority);
-        ~model() { ; }
-        double getData() const;
-        int getOper() const;
-        int getPriority() const;
 
-    private:
-        double data_;
-        int oper_;
-        int priority_;
-    };
 
 } // namespace s21
 #endif // S21_MODEL_H
