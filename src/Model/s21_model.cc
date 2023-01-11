@@ -55,6 +55,7 @@ namespace s21 {
                 }
             } else if (*i == ')' && brackets_check) {
                 brackets_check--;
+                if (brackets_check < 0) result = false;
             }
         }
         if (!brackets_check && !emptyBody)
